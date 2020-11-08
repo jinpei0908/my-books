@@ -7068,7 +7068,7 @@
 
   // src/main.tsx
   const react_dom = __toModule(require_react_dom());
-  const myName = "Jinpei";
-  const element = /* @__PURE__ */ React.createElement("h1", null, "Hello, ", myName);
+  const name = "Jinpei";
+  const element = /* @__PURE__ */ React.createElement("h1", null, "Hello, ", name);
   react_dom.default.render(element, document.getElementById("root"));
 })();
