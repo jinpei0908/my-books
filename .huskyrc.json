@@ -1,6 +1,6 @@
 {
     "hooks": {
-      "pre-commit": "bash pre_commit.bash",
-      "post-commit": "bash post_commit.bash"
+        "pre-commit": "bash pre_commit.bash",
+        "post-commit": "bash post_commit.bash"
     }
-  }
+}
