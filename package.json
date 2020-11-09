@@ -7,7 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "build": "esbuild --bundle --outfile=docs/js/main.js --define:process.env.NODE_ENV='\"production\"' src/main.tsx",
+    "build": "esbuild --bundle --minify --outfile=docs/js/main.js --define:process.env.NODE_ENV='\"production\"' src/main.tsx",
     "prettier": "prettier --write src"
   },
   "repository": {
