@@ -43,15 +43,21 @@ const MyTable = () => (
   <table>
     <thead>
       <tr>
-        <th>col1</th>
-        <th>col2</th>
+        {Object.keys(books[0]).map((key) => (
+          <th>{key}</th>
+        ))}
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>value1</td>
-        <td>value2</td>
-      </tr>
+      {books.map((book) => (
+        <tr>
+          <td>{book.title}</td>
+          <td>{book.isbn}</td>
+          <td>{book.author}</td>
+          <td>{book.publisher}</td>
+          <td>{book.price}</td>
+        </tr>
+      ))}
     </tbody>
   </table>
 )
