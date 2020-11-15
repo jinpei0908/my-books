@@ -4,7 +4,7 @@ import Input from './component/input'
 import Table from './component/table'
 import books from './data/books'
 
-const createRegex = (text: string): string => `.*${text}.*`
+const createRegex = (text: string): string => `.*${text.toLowerCase()}.*`
 
 const RootElement = () => {
   const [value, setValue] = useState('')
@@ -19,9 +19,8 @@ const RootElement = () => {
           setFilteredBooks(
             books.filter(
               (book) =>
-                book.title
-                  .toLocaleLowerCase()
-                  .match(createRegex(e.target.value)) != null
+                book.title.toLowerCase().match(createRegex(e.target.value)) !=
+                null
             )
           )
         }}
