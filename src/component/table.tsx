@@ -39,6 +39,25 @@ const useStyles = makeStyles({
   },
 })
 
+const MyTable = () => (
+  <table>
+    <thead>
+      <tr>
+        <th>col1</th>
+        <th>col2</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>value1</td>
+        <td>value2</td>
+      </tr>
+    </tbody>
+  </table>
+)
+
+export { MyTable }
+
 export default function StickyHeadTable() {
   const classes = useStyles()
   const [page, setPage] = useState(0)
