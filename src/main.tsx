@@ -1,10 +1,10 @@
 import ReactDOM from 'react-dom'
-import Table, { MyTable } from './component/table'
+import Table from './component/table'
+import books from './data/books'
 
 const element = (
   <>
-    <Table />
-    <MyTable />
+    <Table books={books} />
   </>
 )
 

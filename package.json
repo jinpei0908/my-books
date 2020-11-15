@@ -23,8 +23,6 @@
   },
   "homepage": "https://github.com/jinpei0908/fe-book#readme",
   "dependencies": {
-    "@material-ui/core": "^4.11.0",
-    "@material-ui/data-grid": "^4.0.0-alpha.9",
     "react": "^16.14.0",
     "react-dom": "^16.14.0"
   },

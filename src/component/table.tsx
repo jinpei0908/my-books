@@ -1,20 +1,12 @@
-import Paper from '@material-ui/core/Paper'
-import { makeStyles } from '@material-ui/core/styles'
-import Table from '@material-ui/core/Table'
-import TableBody from '@material-ui/core/TableBody'
-import TableCell from '@material-ui/core/TableCell'
-import TableContainer from '@material-ui/core/TableContainer'
-import TableHead from '@material-ui/core/TableHead'
-import TablePagination from '@material-ui/core/TablePagination'
-import TableRow from '@material-ui/core/TableRow'
-import { useState } from 'react'
-import books from '../data/books'
+import { Book } from '../data/books'
+
+interface Props {
+  books: Book[]
+}
 
 interface Column {
   id: 'title' | 'isbn' | 'author' | 'publisher' | 'price'
   label: string
-  minWidth?: number
-  align?: 'right'
   format?: (value: number) => string
 }
 
@@ -30,104 +22,34 @@ const columns: Column[] = [
   },
 ]
 
-const useStyles = makeStyles({
-  root: {
-    width: '100%',
-  },
-  container: {
-    maxHeight: 440,
-  },
-})
-
-const MyTable = () => (
+const Table = ({ books }: Props) => (
   <table>
     <thead>
       <tr>
-        {Object.keys(books[0]).map((key) => (
-          <th>{key}</th>
+        {columns.map((column) => (
+          <th key={column.id}>{column.label}</th>
         ))}
       </tr>
     </thead>
     <tbody>
-      {books.map((book) => (
-        <tr>
-          <td>{book.title}</td>
-          <td>{book.isbn}</td>
-          <td>{book.author}</td>
-          <td>{book.publisher}</td>
-          <td>{book.price}</td>
-        </tr>
-      ))}
+      {books.map((book, index) => {
+        return (
+          <tr key={index}>
+            {columns.map((column) => {
+              const value = book[column.id]
+              return (
+                <td key={column.id}>
+                  {column.format && typeof value === 'number'
+                    ? column.format(value)
+                    : value}
+                </td>
+              )
+            })}
+          </tr>
+        )
+      })}
     </tbody>
   </table>
 )
 
-export { MyTable }
-
-export default function StickyHeadTable() {
-  const classes = useStyles()
-  const [page, setPage] = useState(0)
-  const [rowsPerPage, setRowsPerPage] = useState(10)
-
-  const handleChangePage = (event: unknown, newPage: number) => {
-    setPage(newPage)
-  }
-
-  const handleChangeRowsPerPage = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    setRowsPerPage(+event.target.value)
-    setPage(0)
-  }
-
-  return (
-    <Paper className={classes.root}>
-      <TableContainer className={classes.container}>
-        <Table stickyHeader aria-label="sticky table">
-          <TableHead>
-            <TableRow>
-              {columns.map((column) => (
-                <TableCell
-                  key={column.id}
-                  align={column.align}
-                  style={{ minWidth: column.minWidth }}
-                >
-                  {column.label}
-                </TableCell>
-              ))}
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {books
-              .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-              .map((book, index) => {
-                return (
-                  <TableRow hover role="checkbox" tabIndex={-1} key={index}>
-                    {columns.map((column) => {
-                      const value = book[column.id]
-                      return (
-                        <TableCell key={column.id} align={column.align}>
-                          {column.format && typeof value === 'number'
-                            ? column.format(value)
-                            : value}
-                        </TableCell>
-                      )
-                    })}
-                  </TableRow>
-                )
-              })}
-          </TableBody>
-        </Table>
-      </TableContainer>
-      <TablePagination
-        rowsPerPageOptions={[10, 25, { label: 'All', value: -1 }]}
-        component="div"
-        count={books.length}
-        rowsPerPage={rowsPerPage}
-        page={page}
-        onChangePage={handleChangePage}
-        onChangeRowsPerPage={handleChangeRowsPerPage}
-      />
-    </Paper>
-  )
-}
+export default Table
