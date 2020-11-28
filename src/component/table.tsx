@@ -7,12 +7,13 @@ interface Props {
 interface Column {
   id: 'title' | 'isbn' | 'author' | 'publisher' | 'price'
   label: string
+  className?: string
   format?: (value: number) => string
 }
 
 const columns: Column[] = [
   { id: 'title', label: 'タイトル' },
-  { id: 'isbn', label: 'ISBN' },
+  { id: 'isbn', label: 'ISBN', className: 'text-monospace' },
   { id: 'author', label: '著者' },
   { id: 'publisher', label: '出版社' },
   {
@@ -38,7 +39,10 @@ const Table = ({ books }: Props) => (
             {columns.map((column) => {
               const value = book[column.id]
               return (
-                <td key={column.id}>
+                <td
+                  key={column.id}
+                  className={column.className ? column.className : ''}
+                >
                   {column.format && typeof value === 'number'
                     ? column.format(value)
                     : value}
