@@ -8,9 +8,7 @@
   },
   "scripts": {
     "build": "esbuild --bundle --minify --outfile=docs/js/main.js --define:process.env.NODE_ENV='\"production\"' src/main.tsx",
-    "prettier": "prettier --write src",
-    "jekyll": "bundle exec jekyll serve",
-    "preview": "npm run build && npm run jekyll"
+    "prettier": "prettier --write src"
   },
   "repository": {
     "type": "git",

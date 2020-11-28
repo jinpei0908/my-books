@@ -6,12 +6,15 @@ interface Props {
 }
 
 const Input = ({ value, onChange }: Props) => (
-  <input
-    type="text"
-    placeholder="タイトルで絞り込み"
-    value={value}
-    onChange={onChange}
-  />
+  <div className={'container-sm'}>
+    <input
+      type="text"
+      placeholder="タイトルで絞り込み"
+      value={value}
+      onChange={onChange}
+      className={'form-control input'}
+    />
+  </div>
 )
 
 export default Input

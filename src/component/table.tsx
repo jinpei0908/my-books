@@ -23,7 +23,7 @@ const columns: Column[] = [
 ]
 
 const Table = ({ books }: Props) => (
-  <table>
+  <table className={'table'}>
     <thead>
       <tr>
         {columns.map((column) => (
