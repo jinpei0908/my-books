@@ -6,10 +6,5 @@ jobs:
   check-bats-version-and-echo-issue-body:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-      - run: npm install -g bats
-      - run: bats -v
-      - run: |
-        echo "Issue title: ${{ github.event.issue.title }}"
-        echo "Issue body: ${{ github.event.issue.body }}"
+      - run: echo Issue title ${{ github.event.issue.title }}
+      - run: echo Issue body ${{ github.event.issue.body }}
