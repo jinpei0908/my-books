@@ -3,10 +3,11 @@ on:
   issues:
     types: [opened, edited]
 jobs:
-  check-bats-version:
+  check-bats-version-and-echo-issue-body:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
       - run: npm install -g bats
       - run: bats -v
+      - run: echo ${{ github.event.comment.body }}
