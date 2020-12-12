@@ -1,5 +1,7 @@
 name: Add a new book
-on: []
+on:
+  issues:
+    types: [opened, edited]
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
