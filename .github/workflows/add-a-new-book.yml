@@ -1,5 +1,5 @@
-name: add-new-book
-on: [push]
+name: Add a new book
+on: []
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
