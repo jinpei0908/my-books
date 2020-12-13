@@ -8,4 +8,9 @@ jobs:
     steps:
       - run: echo "Issue number ${{ github.event.issue.number }}"
       - run: echo "Issue title ${{ github.event.issue.title }}"
-      - run: echo "Issue body ${{ github.event.issue.body }}"
+      - name: Write issue body in foo.txt
+        run: echo "Issue body ${{ github.event.issue.body }}" > foo.txt
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          title: "Add books and close ${{ github.event.issue.number }}"
