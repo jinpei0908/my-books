@@ -1,7 +1,9 @@
-import { Book } from '../data/books'
-
-interface Props {
-  books: Book[]
+interface Book {
+  title: string
+  isbn: string
+  author: string
+  publisher: string
+  price: number
 }
 
 interface Column {
@@ -9,6 +11,10 @@ interface Column {
   label: string
   className?: string
   format?: (value: number) => string
+}
+
+interface Props {
+  books: Book[]
 }
 
 const columns: Column[] = [

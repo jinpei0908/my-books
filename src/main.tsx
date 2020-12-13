@@ -2,7 +2,7 @@ import { useState } from 'react'
 import ReactDOM from 'react-dom'
 import Input from './component/input'
 import Table from './component/table'
-import books from './data/books'
+import books from './data/books.json'
 
 const createRegex = (text: string): string => `.*${text.toLowerCase()}.*`
 
