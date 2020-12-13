@@ -7,11 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: echo "Issue number ${{ github.event.issue.number }}"
-      - run: echo "Issue title ${{ github.event.issue.title }}"
       - name: Write issue body in foo.txt
         run: echo "Issue body ${{ github.event.issue.body }}" > foo.txt
-      - name: Create Pull Request
+      - name: Create Pull Request if `本追加` in issue title
         uses: peter-evans/create-pull-request@v3
+        if: contain( ${{ github.event.issue.title }}, '本追加')
         with:
           title: "Add books and close #${{ github.event.issue.number }}"
