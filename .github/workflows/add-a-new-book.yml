@@ -14,4 +14,4 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
-          title: "Add books and close ${{ github.event.issue.number }}"
+          title: "Add books and close #${{ github.event.issue.number }}"
