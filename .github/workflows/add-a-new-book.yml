@@ -4,7 +4,7 @@ on:
     types: [opened, edited]
 jobs:
   check-bats-version-and-echo-issue-body:
-    if: contain( ${{ github.event.issue.title }}, '本追加')
+    if: ${{ github.event.issue.title == '本追加' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
