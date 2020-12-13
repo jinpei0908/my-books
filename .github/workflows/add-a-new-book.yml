@@ -6,5 +6,6 @@ jobs:
   check-bats-version-and-echo-issue-body:
     runs-on: ubuntu-latest
     steps:
+      - run: echo "Issue number ${{ github.event.issue.number }}"
       - run: echo "Issue title ${{ github.event.issue.title }}"
       - run: echo "Issue body ${{ github.event.issue.body }}"
