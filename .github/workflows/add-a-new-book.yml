@@ -6,6 +6,7 @@ jobs:
   check-bats-version-and-echo-issue-body:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - run: echo "Issue number ${{ github.event.issue.number }}"
       - run: echo "Issue title ${{ github.event.issue.title }}"
       - name: Write issue body in foo.txt
