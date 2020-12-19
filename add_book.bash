@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# src/data/books.jsonに書籍情報を追加するスクリプト
+
 set -eu
 
 readonly isbn="$1"
