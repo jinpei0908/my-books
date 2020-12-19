@@ -28,7 +28,7 @@ function get_text_in_xml_tag {
 }
 
 # 国税庁APIから書籍データを取得する
-curl $NDL_URL > "$TMP_XML"
+curl $NDL_URL > "$TMP_XML" && sleep 1
 
 # xmlファイルから必要な情報を抜き出す
 readonly title=$(get_text_in_xml_tag "$TMP_XML" "$TITLE_TAG_NAME")
