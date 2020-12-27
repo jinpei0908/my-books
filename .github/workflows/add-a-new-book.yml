@@ -3,13 +3,18 @@ on:
   issues:
     types: [opened, edited]
 jobs:
-  check-bats-version-and-echo-issue-body:
+  add-book:
     if: ${{ github.event.issue.title == '本追加' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Write issue body in foo.txt
-        run: echo "Issue body ${{ github.event.issue.body }}" > foo.txt
+      - name: Update books.json
+        run: |
+          echo "${{ github.event.issue.body }}" | while read isbn; do
+            bash add_book.bash $isbn
+          done
+      - name: Commit a change
+      - run: git commit -am '本追加'
       - name: Create Pull Request if `本追加` in issue title
         uses: peter-evans/create-pull-request@v3
         with:
