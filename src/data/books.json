@@ -25,20 +25,20 @@
     "isbn": "9784863542457",
     "author": "mio 著",
     "publisher": "シーアンドアール研究所",
-    "price": null
+    "price": 3420
   },
   {
     "title": "Webを支える技術 : HTTP、URI、HTML、そしてREST",
     "isbn": "9784774142043",
     "author": "山本陽平 著",
     "publisher": "技術評論社",
-    "price": null
+    "price": 2570
   },
   {
     "title": "コンピュータシステムの理論と実装 : モダンなコンピュータの作り方",
     "isbn": "9784873117126",
     "author": "Noam Nisan, Shimon Schocken 著,斎藤康毅 訳",
     "publisher": "オライリー・ジャパン オーム社",
-    "price": null
+    "price": 3600
   }
 ]
