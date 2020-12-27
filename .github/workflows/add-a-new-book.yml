@@ -14,7 +14,7 @@ jobs:
             bash add_book.bash $isbn
           done
       - name: Prettier and build
-        run: npm run prettier && npm run build
+        run: npm ci && npm run prettier && npm run build
       - name: Create Pull Request if `本追加` in issue title
         uses: peter-evans/create-pull-request@v3
         with:
