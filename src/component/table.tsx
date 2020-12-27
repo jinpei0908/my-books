@@ -30,36 +30,38 @@ const columns: Column[] = [
 ]
 
 const Table = ({ books }: Props) => (
-  <table className={'table'}>
-    <thead>
-      <tr>
-        {columns.map((column) => (
-          <th key={column.id}>{column.label}</th>
-        ))}
-      </tr>
-    </thead>
-    <tbody>
-      {books.map((book, index) => {
-        return (
-          <tr key={index}>
-            {columns.map((column) => {
-              const value = book[column.id]
-              return (
-                <td
-                  key={column.id}
-                  className={column.className ? column.className : ''}
-                >
-                  {column.format && typeof value === 'number'
-                    ? column.format(value)
-                    : value}
-                </td>
-              )
-            })}
-          </tr>
-        )
-      })}
-    </tbody>
-  </table>
+  <div className={'table-responsive'}>
+    <table className={'table text-nowrap'}>
+      <thead>
+        <tr>
+          {columns.map((column) => (
+            <th key={column.id}>{column.label}</th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {books.map((book, index) => {
+          return (
+            <tr key={index}>
+              {columns.map((column) => {
+                const value = book[column.id]
+                return (
+                  <td
+                    key={column.id}
+                    className={column.className ? column.className : ''}
+                  >
+                    {column.format && typeof value === 'number'
+                      ? column.format(value)
+                      : value}
+                  </td>
+                )
+              })}
+            </tr>
+          )
+        })}
+      </tbody>
+    </table>
+  </div>
 )
 
 export default Table
