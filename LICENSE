@@ -19,3 +19,9 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+I use data of National Diet Library in this repository. Before you use data
+(not code,  for example src/data/books.json) in this repository,
+please see the page shown below.
+
+https://www.ndl.go.jp/jp/use/metadata/index.html
