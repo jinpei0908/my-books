@@ -15,8 +15,8 @@
 
 データ追加用のPRが作られます。PRがマージ後、ページにデータが反映されます。
 
-issueの例: https://github.com/jinpei0908/my-books/issues/30
-PRの例: https://github.com/jinpei0908/my-books/pull/38
+- issueの例: https://github.com/jinpei0908/my-books/issues/30
+- PRの例: https://github.com/jinpei0908/my-books/pull/38
 
 ## License
 
