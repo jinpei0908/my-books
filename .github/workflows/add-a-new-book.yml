@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Update books.json
         run: |
-          echo "${{ github.event.issue.body }}" | while read isbn; do
+          echo "${{ github.event.issue.body }}" | tr -d '\r'| while read isbn; do
             bash add_book.bash $isbn
           done
       - name: Prettier and build
