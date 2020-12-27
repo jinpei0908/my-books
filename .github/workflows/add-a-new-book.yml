@@ -14,7 +14,10 @@ jobs:
             bash add_book.bash $isbn
           done
       - name: Commit a change
-        run: git commit -am '本追加'
+        run: |
+          git config user.name 'jinpei0908'
+          git config user.email 'jinpei0908@gmail.com'
+          git commit -am '本追加'
       - name: Create Pull Request if `本追加` in issue title
         uses: peter-evans/create-pull-request@v3
         with:
