@@ -12,5 +12,12 @@
     "author": "渋川よしき",
     "publisher": "オライリー・ジャパン",
     "price": 3400
+  },
+  {
+    "title": "リーダブルコード : より良いコードを書くためのシンプルで実践的なテクニック",
+    "isbn": "9784873115658",
+    "author": "Dustin Boswell, Trevor Foucher 著,角征典 訳",
+    "publisher": "オライリー・ジャパン オーム社",
+    "price": 2400
   }
 ]
