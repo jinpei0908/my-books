@@ -13,8 +13,10 @@ jobs:
           echo "${{ github.event.issue.body }}" | while read isbn; do
             bash add_book.bash $isbn
           done
-      - name: Commit a change
-        run: git commit -am '本追加'
+      - name: Prettier and build
+        run: |
+          npm run prettier
+          npm run build
       - name: Create Pull Request if `本追加` in issue title
         uses: peter-evans/create-pull-request@v3
         with:
