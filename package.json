@@ -22,13 +22,13 @@
   },
   "homepage": "https://github.com/jinpei0908/fe-book#readme",
   "dependencies": {
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@types/node": "^14.14.6",
-    "esbuild": "^0.8.4",
-    "husky": "^7.0.4",
-    "prettier": "2.1.2"
+    "@types/node": "^16.11.6",
+    "esbuild": "^0.13.9",
+    "husky": "^4.3.8",
+    "prettier": "^2.4.1"
   }
 }
