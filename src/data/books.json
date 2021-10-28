@@ -54,5 +54,26 @@
     "author": "坂井弘亮 著",
     "publisher": "カットシステム",
     "price": null
+  },
+  {
+    "title": "Docker/Kubernetes実践コンテナ開発入門",
+    "isbn": "9784297100339",
+    "author": "山田明憲 著",
+    "publisher": "技術評論社",
+    "price": null
+  },
+  {
+    "title": "エンジニアのためのマネジメントキャリアパス : テックリードからCTOまでマネジメントスキル向上ガイド",
+    "isbn": "9784873118482",
+    "author": "Camille Fournier 著,武舎広幸, 武舎るみ 訳",
+    "publisher": "オライリー・ジャパン オーム社",
+    "price": null
+  },
+  {
+    "title": "イシューからはじめよ : 知的生産の「シンプルな本質」",
+    "isbn": "9784862760852",
+    "author": "安宅和人 著",
+    "publisher": "英治出版",
+    "price": null
   }
 ]
